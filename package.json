@@ -1,0 +1,23 @@
+{
+  "name": "learning-javascript",
+  "version": "1.0.0",
+  "description": "Learning JavaScript project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goserg/Learning-JavaScript.git"
+  },
+  "author": "goserg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goserg/Learning-JavaScript/issues"
+  },
+  "homepage": "https://github.com/goserg/Learning-JavaScript#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "jest": "^26.1.0"
+  }
+}
