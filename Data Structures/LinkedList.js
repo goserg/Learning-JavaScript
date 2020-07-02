@@ -11,6 +11,34 @@ class LinkedList {
         this.size = 0;
     }
 
+    static fromArray(array) {
+        let ll = new LinkedList();
+        for (let i of array.reverse()) {
+            ll.add_first(i);
+        }
+        return ll;
+    }
+
+    insert(index, value) {
+        if (index < 0 || index > this.size) {
+            throw Error("index is out of bounds");
+        }
+        let newNode = new _Node(value);
+        let currentNode = this.head;
+        let counter = 0;
+        while (counter < index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        this.size++;
+    }
+
+    append(value) {
+        this.insert(this.size, value);
+    }
+
     add_first(value) {
         let newNode = new _Node(value);
         newNode.next = this.head.next;
@@ -31,7 +59,7 @@ class LinkedList {
         return currentNode.value;
     }
 
-    pop(index) {
+    pop(index = this.size - 1) {
         if (index < 0 || index >= this.size) {
             throw Error("index is out of bounds");
         }
